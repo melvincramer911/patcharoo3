@@ -1,0 +1,6 @@
+# Cursor IDE Rules for patcharoo3
+
+## Git Operations
+- Always pull before starting new work: `git pull origin main`
+- Commit with descriptive messages
+- Push changes after committing: `git push origin main`
