@@ -1,0 +1,24 @@
+StagingMiddleTier:
+
+  ServerSimSda:
+    - s0vapp001
+    - s0vapp002
+
+  ServerSimSdb:
+    - s0vapp003
+    - s0vapp004
+
+  ServerSimRes:
+    - s0vapp005
+
+  ServerDbsLow:
+    - S1VRDBS001
+
+  ServerDbsHig:
+    - S1VRDBS002
+
+  F5Sda:
+    - "https://8.8.8.8/tmui/login.jsp"
+
+  F5Sdb:
+    - "https://4.4.4.4/xui/"
