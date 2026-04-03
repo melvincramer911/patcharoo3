@@ -1,0 +1,30 @@
+### note to self, make sure I do a "compleated" test.
+
+Step01: 
+  verify_ServerDbsLow_is_Secondary
+  Verify_F5Sda_Statuses
+  Step01_compleatedYN
+  
+Step02: 
+  If_verify_ServerDbsLow_is_Secondary_PatchIt   
+  Patch_ServerSimSda 
+  Step02_compleatedYN
+  
+Step03: 
+  Reboot_ServerDbsLow
+  Reboot_ServerSimSda
+  Step03_compleatedYN
+  
+Step04:
+  Flip_S1VRDBS001_to_primary
+  Patch_S1VRDBS001
+  Patch_ServerSimSdb  
+  Step04_compleatedYN 
+
+Step05:  
+  Reboot_ServerDbsHig
+  Reboot_ServerSimSdb
+  Step05_compleatedYN
+
+Step06:
+  Flip_S1VRDBS002_to_primary
