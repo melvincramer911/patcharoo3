@@ -1,0 +1,28 @@
+runbook:
+  Step01:
+    - verify_ServerDbsPrimary_is_Secondary
+    - Verify_F5Sda_Statuses
+    - Step01_completedYN
+  Step02:
+    - If_verify_ServerDbsPrimary_is_Secondary_PatchIt
+    - Patch_ServerSimSda
+    - Step02_completedYN
+  Step03:
+    - Reboot_ServerDbsPrimary
+    - Reboot_ServerSimSda
+    - Step03_completedYN
+  Step04:
+    - Flip_S1VRDBS001_to_primary
+    - Patch_S1VRDBS001
+    - Patch_ServerSimSdb
+    - Step04_completedYN
+  Step05:
+    - Reboot_ServerDbsSecondary
+    - Reboot_ServerSimSdb
+    - Step05_completedYN
+  Step06:
+    - Flip_S1VRDBS002_to_primary
+    - Step06_completedYN
+
+
+    
