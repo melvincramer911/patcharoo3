@@ -31,8 +31,8 @@ Each environment has a YAML file that describes all servers and endpoints involv
 | `ServerSimSda` | Simple Server - Side A. No special services to stop before reboot. Default active side. |
 | `ServerSimSdb` | Simple Server - Side B. No special services to stop before reboot. |
 | `ServerSimRes` | Reserved Server. Not in active use but still requires patching. |
-| `ServerDbsLow` | Database Server - Lower numbered SQL HA cluster member. |
-| `ServerDbsHig` | Database Server - Higher numbered SQL HA cluster member. |
+| `ServerDbsPrimary` | Database Server - Primary SQL HA cluster member. |
+| `ServerDbsSecondary` | Database Server - Secondary SQL HA cluster member. |
 | `F5Sda` | F5 Load Balancer - Side A. Default active side. |
 | `F5Sdb` | F5 Load Balancer - Side B. |
 | `TimestampStart` | Scheduled start time for the patch window. |
@@ -54,10 +54,10 @@ StagingMiddleTier:
   ServerSimRes:
     - s0vapp005
 
-  ServerDbsLow:
+  ServerDbsPrimary:
     - S1VRDBS001
 
-  ServerDbsHig:
+  ServerDbsSecondary:
     - S1VRDBS002
 
   F5Sda:

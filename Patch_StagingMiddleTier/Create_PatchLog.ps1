@@ -75,10 +75,10 @@ PatchLog:
   ServerSimRes:
     - s0vapp005
 
-  ServerDbsLow:
+  ServerDbsPrimary:
     - S1VRDBS001
 
-  ServerDbsHig:
+  ServerDbsSecondary:
     - S1VRDBS002
 
   F5Sda:

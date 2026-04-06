@@ -1,17 +1,17 @@
 ### note to self, make sure I do a "compleated" test.
 
 Step01: 
-  verify_ServerDbsLow_is_Secondary
+  verify_ServerDbsPrimary_is_Secondary
   Verify_F5Sda_Statuses
   Step01_compleatedYN
   
 Step02: 
-  If_verify_ServerDbsLow_is_Secondary_PatchIt   
+  If_verify_ServerDbsPrimary_is_Secondary_PatchIt   
   Patch_ServerSimSda 
   Step02_compleatedYN
   
 Step03: 
-  Reboot_ServerDbsLow
+  Reboot_ServerDbsPrimary
   Reboot_ServerSimSda
   Step03_compleatedYN
   
@@ -22,7 +22,7 @@ Step04:
   Step04_compleatedYN 
 
 Step05:  
-  Reboot_ServerDbsHig
+  Reboot_ServerDbsSecondary
   Reboot_ServerSimSdb
   Step05_compleatedYN
 
