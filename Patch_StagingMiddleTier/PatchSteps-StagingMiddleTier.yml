@@ -1,134 +1,164 @@
-# PatchSteps-StagingMiddleTier4.yml — per-host pre-patch checks + patch/reboot tracking
-# Inventory source of truth for roles: StagingMiddleTier.yml
+# Staging Middle Tier — patch tracking (hosts + F5 endpoints)
+# Role inventory: StagingMiddleTier.yml
 #
-# Learning tips:
-# - Use Y or N for *YN fields (or null if not checked yet).
-# - Use a number for GigsAvail-* (free GB), or null until measured.
-# - Use ISO-8601 strings for *ISO8601 (e.g. 2026-04-02T14:30:00-05:00) or null.
-# - F5 rows use hostname as a logical label; there is no Windows C: drive — leave drive fields null or 0.
+# pre_patch_checks: use true/false for reboot_pending / failed_patches_present, or null if unknown.
+# drive_*_free_gb: number (GB) or null.
+# patch_status times: ISO-8601 strings or null. reboot_complete: true/false/null.
 
-# --- Windows / SQL servers: one block per hostname --------------------------------
 hosts:
   - hostname: s0vapp001
     role: ServerSimSda
-    PrePatchStatuses:
-      NeedsRebootYN: null
-      FailedPatchLeftoverYN: null
-      GigsAvail-DriveC: null
-      GigsAvail-DriveD: null
-    PatchStatuses:
-      PatchStartedYN: null
-      PatchingYN: null
-      PatchCompleteYN: null
-      PatchNeedsRebootYN: null
-      PatchStart-ISO8601: null
-      RebootStart-ISO8601: null
-      RebootedYN: null
+    os: Windows
+    pre_patch_checks:
+      reboot_pending: null
+      failed_patches_present: null
+      drive_c_free_gb: null
+      drive_d_free_gb: null
+    patch_status:
+      patch_started: null
+      patch_running: null
+      patch_complete: null
+      reboot_required: null
+      patch_start_time: null
+      reboot_start_time: null
+      reboot_complete: null
 
   - hostname: s0vapp002
     role: ServerSimSda
-    PrePatchStatuses:
-      NeedsRebootYN: null
-      FailedPatchLeftoverYN: null
-      GigsAvail-DriveC: null
-      GigsAvail-DriveD: null
-    PatchStatuses:
-      PatchStartedYN: null
-      PatchingYN: null
-      PatchCompleteYN: null
-      PatchNeedsRebootYN: null
-      PatchStart-ISO8601: null
-      RebootStart-ISO8601: null
-      RebootedYN: null
+    os: Windows
+    pre_patch_checks:
+      reboot_pending: null
+      failed_patches_present: null
+      drive_c_free_gb: null
+      drive_d_free_gb: null
+    patch_status:
+      patch_started: null
+      patch_running: null
+      patch_complete: null
+      reboot_required: null
+      patch_start_time: null
+      reboot_start_time: null
+      reboot_complete: null
 
   - hostname: s0vapp003
     role: ServerSimSdb
-    PrePatchStatuses:
-      NeedsRebootYN: null
-      FailedPatchLeftoverYN: null
-      GigsAvail-DriveC: null
-      GigsAvail-DriveD: null
-    PatchStatuses:
-      PatchStartedYN: null
-      PatchingYN: null
-      PatchCompleteYN: null
-      PatchNeedsRebootYN: null
-      PatchStart-ISO8601: null
-      RebootStart-ISO8601: null
-      RebootedYN: null
+    os: Windows
+    pre_patch_checks:
+      reboot_pending: null
+      failed_patches_present: null
+      drive_c_free_gb: null
+      drive_d_free_gb: null
+    patch_status:
+      patch_started: null
+      patch_running: null
+      patch_complete: null
+      reboot_required: null
+      patch_start_time: null
+      reboot_start_time: null
+      reboot_complete: null
 
   - hostname: s0vapp004
     role: ServerSimSdb
-    PrePatchStatuses:
-      NeedsRebootYN: null
-      FailedPatchLeftoverYN: null
-      GigsAvail-DriveC: null
-      GigsAvail-DriveD: null
-    PatchStatuses:
-      PatchStartedYN: null
-      PatchingYN: null
-      PatchCompleteYN: null
-      PatchNeedsRebootYN: null
-      PatchStart-ISO8601: null
-      RebootStart-ISO8601: null
-      RebootedYN: null
+    os: Windows
+    pre_patch_checks:
+      reboot_pending: null
+      failed_patches_present: null
+      drive_c_free_gb: null
+      drive_d_free_gb: null
+    patch_status:
+      patch_started: null
+      patch_running: null
+      patch_complete: null
+      reboot_required: null
+      patch_start_time: null
+      reboot_start_time: null
+      reboot_complete: null
 
   - hostname: s0vapp005
     role: ServerSimRes
-    PrePatchStatuses:
-      NeedsRebootYN: null
-      FailedPatchLeftoverYN: null
-      GigsAvail-DriveC: null
-      GigsAvail-DriveD: null
-    PatchStatuses:
-      PatchStartedYN: null
-      PatchingYN: null
-      PatchCompleteYN: null
-      PatchNeedsRebootYN: null
-      PatchStart-ISO8601: null
-      RebootStart-ISO8601: null
-      RebootedYN: null
+    os: Windows
+    pre_patch_checks:
+      reboot_pending: null
+      failed_patches_present: null
+      drive_c_free_gb: null
+      drive_d_free_gb: null
+    patch_status:
+      patch_started: null
+      patch_running: null
+      patch_complete: null
+      reboot_required: null
+      patch_start_time: null
+      reboot_start_time: null
+      reboot_complete: null
 
   - hostname: S1VRDBS001
     role: ServerDbsPrimary
-    PrePatchStatuses:
-      NeedsRebootYN: null
-      FailedPatchLeftoverYN: null
-      GigsAvail-DriveC: null
-      GigsAvail-DriveD: null
-    PatchStatuses:
-      PatchStartedYN: null
-      PatchingYN: null
-      PatchCompleteYN: null
-      PatchNeedsRebootYN: null
-      PatchStart-ISO8601: null
-      RebootStart-ISO8601: null
-      RebootedYN: null
+    os: Windows
+    pre_patch_checks:
+      reboot_pending: null
+      failed_patches_present: null
+      drive_c_free_gb: null
+      drive_d_free_gb: null
+    patch_status:
+      patch_started: null
+      patch_running: null
+      patch_complete: null
+      reboot_required: null
+      patch_start_time: null
+      reboot_start_time: null
+      reboot_complete: null
 
   - hostname: S1VRDBS002
     role: ServerDbsSecondary
-    PrePatchStatuses:
-      NeedsRebootYN: null
-      FailedPatchLeftoverYN: null
-      GigsAvail-DriveC: null
-      GigsAvail-DriveD: null
-    PatchStatuses:
-      PatchStartedYN: null
-      PatchingYN: null
-      PatchCompleteYN: null
-      PatchNeedsRebootYN: null
-      PatchStart-ISO8601: null
-      RebootStart-ISO8601: null
-      RebootedYN: null
+    os: Windows
+    pre_patch_checks:
+      reboot_pending: null
+      failed_patches_present: null
+      drive_c_free_gb: null
+      drive_d_free_gb: null
+    patch_status:
+      patch_started: null
+      patch_running: null
+      patch_complete: null
+      reboot_required: null
+      patch_start_time: null
+      reboot_start_time: null
+      reboot_complete: null
 
-# --- Load balancers (URL targets; same status shape for one file to parse) ---------
+# F5: not Windows; drive fields usually stay null. Same keys keep one parser shape.
 endpoints:
   - hostname: F5Sda
     role: F5Sda
+    os: F5 BIG-IP
     url: "https://8.8.8.8/tmui/login.jsp"
-    
+    pre_patch_checks:
+      reboot_pending: null
+      failed_patches_present: null
+      drive_c_free_gb: null
+      drive_d_free_gb: null
+    patch_status:
+      patch_started: null
+      patch_running: null
+      patch_complete: null
+      reboot_required: null
+      patch_start_time: null
+      reboot_start_time: null
+      reboot_complete: null
 
   - hostname: F5Sdb
     role: F5Sdb
+    os: F5 BIG-IP
     url: "https://4.4.4.4/xui/"
-    
+    pre_patch_checks:
+      reboot_pending: null
+      failed_patches_present: null
+      drive_c_free_gb: null
+      drive_d_free_gb: null
+    patch_status:
+      patch_started: null
+      patch_running: null
+      patch_complete: null
+      reboot_required: null
+      patch_start_time: null
+      reboot_start_time: null
+      reboot_complete: null
